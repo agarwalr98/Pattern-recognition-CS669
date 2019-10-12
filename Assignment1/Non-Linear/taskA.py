@@ -77,8 +77,8 @@ for i in head:
     elif j >= Train_size_CLass2:
         Class2_test[j-Train_size_CLass2] = i
         j = j + 1 
-with open("group04.txt") as myfile:
-    head = list(itertools.islice(myfile,2447))
+# with open("group04.txt") as myfile:
+#     head = list(itertools.islice(myfile,2447))
 
 numData_Class3 = 1000
 
@@ -91,7 +91,7 @@ Test_size_Class3 = int((1- splitValue)*numData_Class3)
 Class3_train = np.zeros(shape=(int(Train_size_Class3),2), dtype=float)
 Class3_test = np.zeros(shape=(int(Test_size_Class3),2), dtype=float)
 
-with open("group03.txt") as myfile:
+with open("group04.txt") as myfile:
     head = list(itertools.islice(myfile,801, 1801))
 
 print(len(head))
@@ -107,8 +107,8 @@ for i in head:
         j = j + 1
 
 # print(Train_size)
-print(len(Class1_train))
-print(len(Class1_test) )
+# print(len(Class1_train))
+# print(len(Class1_test) )
 
 def mean(Class_train):
     sumx = 0;sumy = 0;count = 0

@@ -138,7 +138,7 @@ covar = np.zeros(shape=(no_of_classes,2, 2))
 for i in range(no_of_classes):
     for j in range(input_dimension):
         covar[i][j][j] = var[i][j]
-# print(covar)
+# print(covar)  
 # covar /= no_of_classes
 # print(covar[1])
 

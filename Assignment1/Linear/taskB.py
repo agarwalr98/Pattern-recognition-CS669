@@ -103,6 +103,21 @@ def varience(Class_train, m1, m2):
     vary /= count
     return varx, vary
 
+def covar_func(i):
+    if i==0:
+        Class_train = Class1_train
+    elif i==1:
+        Class_train = Class2_train
+    else:
+        Class_train = Class3_train
+    varx=0;vary=0;count=0;output=0
+    for line in Class_train:
+        varx = float(line[0])-u[i][0]
+        vary = float(line[1])-u[i][1]
+        output += varx*vary
+        count = count + 1
+    return output/count
+
 u = np.zeros(shape=(3,2), dtype=float)
 var = np.zeros(shape=(3,2), dtype=float)
 no_of_classes = 3
@@ -184,7 +199,11 @@ covar = np.zeros(shape=(2, 2))
 for i in range(no_of_classes):
     for j in range(input_dimension):
         for k in range(input_dimension):
-            covar[j][k] += math.sqrt(var[i][j])*math.sqrt(var[i][k])
+            if j==k:
+                covar[j][k] += var[i][j]
+            else:
+                covar[j][k] += covar_func(i)
+
 # print(covar)
 covar /= no_of_classes
 # print(covar)

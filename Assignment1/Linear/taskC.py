@@ -42,7 +42,7 @@ k=0
 # random.shuffle(file2)
 # random.shuffle(file3)
 
-j = 0 
+j = 0
 for i in file1:
     if j < Train_size:
         Class1_train[j] = i

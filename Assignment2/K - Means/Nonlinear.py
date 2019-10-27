@@ -6,7 +6,7 @@ print("========== K MEANS CLUSTERING ===========\n")
 colors=['red', 'blue', 'green']
 
 TotalData = 0
-with open("Data/NonLinear/group03.txt") as myfile:
+with open("Data/NonLinear/group04.txt") as myfile:
     next(myfile)
     for i in myfile:
         TotalData = TotalData + 1
@@ -14,7 +14,7 @@ with open("Data/NonLinear/group03.txt") as myfile:
 index = 0
 Data = np.zeros(shape = (int(TotalData), int(2)), dtype = float)
 
-with open("Data/NonLinear/group03.txt") as myfile:
+with open("Data/NonLinear/group04.txt") as myfile:
     next(myfile)
     for i in myfile:
         i = i.split()

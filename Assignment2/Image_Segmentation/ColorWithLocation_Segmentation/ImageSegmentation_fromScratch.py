@@ -152,7 +152,7 @@ while True:
     for i in range(0,K):
         Mean_Clusters[i] = mean_calculate(R_nk, vector, i)
 
-    name = "plot_" + str(l)
+    name = "Iteration" + str(l)
     plt.imsave(name + '.png', cluster_pic)
     Cost = CostCompute(R_nk, vector)
     print("precost: ",Precost)

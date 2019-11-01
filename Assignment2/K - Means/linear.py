@@ -111,48 +111,21 @@ while True:
         plt.plot(float(i[0]), float(i[1]),"o", color=colors[PredictCluster])
 
     
-
-    plot_name = 'plt' + str(l) + '.png'
+	
+    plot_name = 'Iteration' + str(l) + '.png'
     plt.title("Iteration number " + str(l))
     plt.xlabel("Dim 1")
     plt.ylabel("Dim 2")
     plt.savefig('./plot/Linear/'+ plot_name)
     for i in range(0,K):
         Mean_Clusters[i] = mean_calculate(R_nk, Data, i)
-    # if np.array_equal(temp_Rnk,R_nk)==True and flag <0:
-    #     num =num+ 1
-    #     flag =l
-    # elif np.array_equal(temp_Rnk,R_nk)==True and flag+1 ==l:
-    #     num =num+1
-    #     flag = l
-    # elif np.array_equal(temp_Rnk, R_nk)==True and flag+ 1!= l:
-    #     num =0
+   
+
+
     cost = CostCompute(R_nk, Data)
     print("precost: ", precost)
     print("Cost: ", cost)
     if precost == cost:
         break
     l = l+1
-    
 
-# print(R_nk)
-# DataCluster = np.zeros(shape=(int(K) , int(dimension)), dtype =float)
-# index = 0
-# for j in Data:
-#     for i in range(0,K):
-#         if R_nk[index][0] == 1:
-#             plt.scatter(float(j[0]), float(j[1]),"o", color='red')
-#         elif R_nk[index][1] == 1:
-#             plt.plot(float(j[0]),float(j[1]),"o", color="blue")
-#         elif R_nk[index][2] == 1:
-#             plt.plot(float(j[0]),float(j[1]), "o", color="green")
-            # DataCluster =np.append(DataCluster[i], j, axis=0)
-        
-    # index = index +1
-
-# for line in DataCluster:
-#     x=line.split()
-#     x[0] = float(x[0])
-#     x[1] = float(x[1])
-    # plt.plot(x[0], x[1], "o", color='blue')
-#     print(x[0],x[1])
